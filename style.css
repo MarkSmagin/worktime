@@ -1,0 +1,171 @@
+/***
+    The new CSS reset - version 1.7.2 (last updated 23.6.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+ *:where(:not(html, iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+  all: unset;
+  display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+  cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+  list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+  max-width: 100%;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+  -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+  white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+  color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+ display:revert; revert to element instead of attribute */
+:where([hidden]) {
+  display: none;
+}
+
+/* revert for bug in Chromium browsers
+- fix for the content editable attribute will work properly.
+- webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+body{
+  padding: 10px;
+}
+
+.clinic-worktime {
+  margin-left: auto;
+  width: 220px;
+}
+
+@media (max-width: 900px){
+  .clinic-worktime {
+      right: -15px;
+  }
+}
+
+@media (max-width: 900px){
+  .clinic-worktime {
+      right: -2px;
+  }
+}
+
+@media (max-width: 480px){
+  .clinic-worktime {
+      padding-top: 0px;
+      right: 0;
+      width: 100%;
+  }
+}
+
+.clinic-worktime {
+  background: #eff5fc;
+  border: 1.5px solid #BECEE0;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+@media (max-width: 900px){
+  .clinic-worktime {
+      background: #ffffff;
+  }
+}
+
+@media (max-width: 480px){
+  .clinic-worktime {
+      border-radius: 10px;
+  }
+}
+
+.worktime_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #becee06e;
+  padding: 2px 5px;
+  margin-bottom: 2px;
+}
+
+.worktime_row {
+  padding: 5px 10px;
+}
+
+.worktime_row:last-child{
+  border-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+.worktime_row span,
+.current_worktime span {
+  font-weight: 400;
+  font-size: 15px;
+  color: #353535;
+}
+
+.worktime_row div,
+.current_worktime div {
+  font-weight: 500;
+  font-size: 15px;
+  color: #353535;
+  width: 115px;
+}
+
+.current_worktime{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+
+.ui-accordion-header-icon{
+  display: none;
+}
