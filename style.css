@@ -163,7 +163,10 @@ body{
   align-items: center;
   justify-content: space-between;
   padding: 5px 10px;
-  margin-bottom: 2px;
+}
+
+.worktime_underline{
+  border-bottom: 1px solid #becee06e;
 }
 
 .ui-accordion-header-icon{

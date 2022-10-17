@@ -17,6 +17,16 @@ $('.clinic-worktime').accordion({
   collapsible: true,
 });
 
+$('.clinic-worktime').on('click', function(){
+  if($('.current_worktime').hasClass('worktime_underline')){
+    setTimeout(() => {
+      $('.current_worktime').removeClass('worktime_underline');
+    }, 400);
+  } else {
+    $('.current_worktime').addClass('worktime_underline');
+  }
+})
+
 if(n >= 1 && n <= 5){
   $('.current_worktime').children('div').text($('.weekday').children('div').text());
 } else if(n == 6){
