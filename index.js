@@ -8,7 +8,7 @@ var days = [
   'Суббота'
 ];
 var d = new Date();
-var n = 7;
+var n = d.getDay();
 console.log(n);
 
 $('.clinic-worktime').accordion({
